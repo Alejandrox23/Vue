@@ -1,5 +1,11 @@
-body {
+/* 🔹 Reset básico */
+html, body {
+  height: 100%;
   margin: 0;
+}
+
+/* 🔹 Fondo general */
+body {
   min-height: 100vh;
   background: linear-gradient(
     135deg,
@@ -9,15 +15,15 @@ body {
   );
   font-family: Arial, sans-serif;
 }
-html, body, #app {
-  height: 100%;
-}
 
+/* 🔹 Contenedor principal (Vue) */
 #app {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
+/* 🔹 Esto empuja el footer */
 footer {
   margin-top: auto;
-}
+} 

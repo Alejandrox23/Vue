@@ -3,9 +3,9 @@
   <footer class="footer">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
 
-      <!-- 🔹 LOGO TEXTO -->
+      <!-- 🔹 LOGO / NOMBRE -->
       <div class="logo-text mb-2 mb-md-0">
-        Logo
+        MiSitio
       </div>
 
       <!-- 🔹 COPYRIGHT -->
@@ -13,11 +13,17 @@
         © 2026 MiSitio - Todos los derechos reservados
       </div>
 
-      <!-- 🔹 REDES -->
+      <!-- 🔹 REDES SOCIALES -->
       <div class="social-icons d-flex gap-3 mt-2 mt-md-0">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#" aria-label="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <i class="bi bi-twitter"></i>
+        </a>
       </div>
 
     </div>
@@ -26,32 +32,48 @@
 <style scoped>
 .footer {
   background: #0a161b;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  color: #fff; /* 🔥 fuerza texto blanco */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 
-/* Logo estilo (como imagen pero texto) */
+/* 🔹 Logo */
 .logo-text {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
-/* Texto copyright */
+/* 🔹 Copyright */
 .copyright {
-  color: #ccc;
   font-size: 0.9rem;
+  color: #b0b0b0;
 }
 
-/* Redes */
+/* 🔹 Redes sociales */
 .social-icons a {
-  color: #ccc;
-  font-size: 1.2rem;
-  transition: 0.3s;
+  color: #b0b0b0;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
 }
 
+/* Hover bonito */
 .social-icons a:hover {
-  color: #fff;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* 🔹 Responsive (mejora en móvil) */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .logo-text {
+    margin-bottom: 5px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
 </style>

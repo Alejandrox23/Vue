@@ -18,9 +18,9 @@ const router = createRouter({
             component: Galeria
         },
         {
-            path: '/sobreNosotros',
+           path: '/sobre-nosotros',
             name: "SobreNosotros",
-            component:SobreNosotros
+             component: SobreNosotros
         },
         {
             path:'/contactanos',
