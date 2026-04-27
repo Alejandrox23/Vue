@@ -99,7 +99,7 @@ defineProps({
   margin: 10px 0;
 }
 
-/* 🔥 HOVER SOLO EN DESKTOP */
+/* 🔥 HOVER SOLO EN DESKTOP REAL */
 @media (hover: hover) and (pointer: fine) {
   .exposicion-item:hover .marco-obra {
     transform: scale(1.2);
@@ -112,16 +112,33 @@ defineProps({
   }
 }
 
-/* 📱 MÓVIL → SIN ZOOM, INFO SIEMPRE VISIBLE */
+/* 📱 MÓVIL → SIN ZOOM + INFO VISIBLE + TAMAÑO MÁS CONTROLADO */
 @media (max-width: 768px) {
-  .marco-obra {
+
+  /* ❌ elimina cualquier scale */
+  .exposicion-item:hover .marco-obra {
     transform: none !important;
   }
 
+  /* ✅ info siempre visible */
   .info-expandida {
     opacity: 1;
     transform: translateY(0);
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  }
+
+  /* ✅ reduce un poco el tamaño visual */
+  .marco-obra {
+    transform: scale(0.98);
+  }
+
+  /* opcional: texto más compacto */
+  .info-expandida h3 {
+    font-size: 0.9rem;
+  }
+
+  .descripcion-texto {
+    font-size: 0.75rem;
   }
 }
 
