@@ -243,13 +243,13 @@ const obrasFiltradas = computed(() => {
   inset: 0;
 }
 
-/* 🔥 IMPORTANTE: fondo real para ver contenido */
+/* 🔥 FONDO GENERAL */
 .galeria-page {
   background: #0f2027;
   min-height: 100vh;
 }
 
-/* 🔥 FILTRO (LO QUE ESTABA MAL) */
+/* 🔥 FILTRO */
 .filtro-galeria {
   position: relative;
   z-index: 10;
@@ -266,14 +266,14 @@ const obrasFiltradas = computed(() => {
   margin-bottom: 5rem;
 }
 
-/* 🔥 MOSAICO (ASEGURADO) */
+/* 🔥 MOSAICO */
 .mosaico-dinamico {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 
-/* 🔥 DEBUG VISUAL (IMPORTANTE SI NO VEÍAS NADA) */
+/* 🔥 ASEGURA QUE LAS CARDS SE VEAN */
 .mosaico-dinamico > * {
   min-height: 200px;
 }
@@ -294,26 +294,54 @@ const obrasFiltradas = computed(() => {
   }
 }
 
-/* 📱 RESPONSIVE */
+/* 📱 TABLET */
 @media (max-width: 992px) {
   .mosaico-dinamico {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
   .mosaico-dinamico {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    overflow: hidden;
   }
+
+  /* 🔹 cards más pequeñas */
+  .mosaico-dinamico > * {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  /* ❌ eliminar zoom (viene del CardGaleria) */
+  .mosaico-dinamico > *:hover {
+    transform: none !important;
+  }
+
+  /* 🔥 mata cualquier scale interno */
+  .mosaico-dinamico > * * {
+    transform: none !important;
+  }
+
 }
 
+/* 📱 MOBILE PEQUEÑO */
 @media (max-width: 576px) {
+
   .hero-wrap {
     height: 60vh;
   }
 
   .mosaico-dinamico {
     grid-template-columns: 1fr;
+  }
+
+  .mosaico-dinamico > * {
+    height: 160px;
+    min-height: 160px;
   }
 }
 </style>
