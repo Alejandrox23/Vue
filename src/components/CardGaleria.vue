@@ -99,16 +99,30 @@ defineProps({
   margin: 10px 0;
 }
 
-/* 🔥 HOVER EXPANSIÓN */
-.exposicion-item:hover .marco-obra {
-  transform: scale(1.2);
-  z-index: 10;
+/* 🔥 HOVER SOLO EN DESKTOP */
+@media (hover: hover) and (pointer: fine) {
+  .exposicion-item:hover .marco-obra {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+
+  .exposicion-item:hover .info-expandida {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* 🔥 INFO APARECE */
-.exposicion-item:hover .info-expandida {
-  opacity: 1;
-  transform: translateY(0);
+/* 📱 MÓVIL → SIN ZOOM, INFO SIEMPRE VISIBLE */
+@media (max-width: 768px) {
+  .marco-obra {
+    transform: none !important;
+  }
+
+  .info-expandida {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  }
 }
 
 </style>
